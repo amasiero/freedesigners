@@ -49,10 +49,16 @@ header {
 	align-items: center;
 }
 
-.menu ul li a {
+.menu-link {
 	font: 24px Roboto, sans-serif;
 	color: #fff;
 	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	transition: border 0.5s;
+}
+
+.menu-link:hover {
+	border-color: #fff;
 }
 
 main {
@@ -115,7 +121,7 @@ main {
 	margin-top: 24px;
 }
 
-.form-container > span {
+.form-container > .tip {
 	margin-top: 4px;
 	border: 1px solid sandybrown;
 	color: sandybrown;
@@ -148,16 +154,21 @@ main {
 	transition: border-color 0.5s;
 }
 
-.form-control:focus {
-	border-color: #555;
-}
-
-.form-control:valid:not(textarea) {
+.valido {
 	border-color: #4caf50;
 }
 
-.form-control:invalid {
+.invalido {
 	border-color: #f44336;
+}
+
+.msg-error {
+	margin-top: 4px;
+	color: #f44336;
+}
+
+.form-control:focus {
+	border: 2px solid #555;
 }
 
 .form-control::placeholder {
@@ -188,6 +199,7 @@ textarea.form-control {
 	border-radius: 4px;
 	padding: 16px 64px;
 	border: 0;
+	text-decoration: none;
 }
 
 .btn-primary {
@@ -214,6 +226,10 @@ textarea.form-control {
 	font-weight: normal;
 }
 
+.btn-table {
+	padding: 16px 32px;
+}
+
 .btn-menu {
 	font: 24px Roboto, sans-serif;
 	color: #fff;
@@ -224,4 +240,43 @@ textarea.form-control {
 .btn-menu:hover {
 	/* pseudo-class ou pseudo-selector */
 	background: rgba(216, 146, 161, 0.4);
+}
+
+.tabela-precos {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 80px;
+}
+
+.tabela-precos-cabecalho th {
+	font-size: 24px;
+	color: #bd465f;
+}
+
+.tabela-precos-info td {
+	font-size: 20px;
+}
+
+.tabela-precos-info tr:nth-child(even) {
+	background: #dbdbdb;
+}
+
+.tabela-precos-info tr:last-child td {
+	border-bottom: 1px solid #555;
+}
+
+th {
+	border-bottom: 1px solid #555;
+	padding: 10px;
+}
+
+td {
+	border-bottom: 1px dotted #555;
+	padding: 10px;
+}
+
+tfoot > tr > td {
+	border: 0;
+	text-align: center;
+	padding-top: 25px;
 }
